@@ -108,7 +108,7 @@ execute "secret_token" do
 end
 
 execute "start_webrick" do
-    command "ruby script/rails server webrick -e production -p 80 -d"
+    command "ruby script/rails server webrick -e development -p 80 -d"
     cwd "#{node['redmine_dir']}"
     action :run
 end
