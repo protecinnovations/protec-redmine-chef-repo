@@ -83,7 +83,7 @@ execute "session_store" do
 end
 
 execute "create_database" do
-    command "mysql -u root -p#{node['mysql']['server_root_password']} -e 'CREATE DATABASE #{node['database']['schema']} CHARACTER SET utf8;'"
+    command "mysql -u root -p#{node['mysql']['server_root_password']} -e 'DROP DATABASE IF EXISTS #{node['database']['schema']}; CREATE DATABASE #{node['database']['schema']} CHARACTER SET utf8;'"
     action :run
 end
 
